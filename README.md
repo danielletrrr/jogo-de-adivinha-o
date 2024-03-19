@@ -4,9 +4,10 @@
 >REQUISITOS :space_invader:
 1. o jogo irá sortear um alvo aleatório, de 1 a 20
 2. o jogo deverá receber um palpite do usuário
-3. após o palpite, o jogo irá exibir o valor do alvo
-4. se o palpite estiver incorreto, o jogo mostra o alvo sorteado e o usuário tem uma nova chance
-5. o jogo define o próximo alvo como a soma do alvo anterior com o valor da nova bola sorteada
+3. o palpite só poderá ser um número, se uma letra for digitada, aparecerá a mensagem "Hmmm, só números heim."
+4. após o palpite, o jogo irá exibir o valor do alvo
+5. se o palpite estiver incorreto, o jogo mostra o alvo sorteado e o usuário tem uma nova chance
+6. o jogo define o próximo alvo como a soma do alvo anterior com o valor da nova bola sorteada
 7. se o valor do alvo ultrapassar 100, vitória do computador 
 8. se o palpite estiver correto, vitória do usuário e o jogo reinicia
 >
