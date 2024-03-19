@@ -1,8 +1,10 @@
-import random #usada para escolher aleatoriamente um elemento de uma sequência
+import random  # Usada para escolher aleatoriamente um elemento de uma sequência
+
 
 class Bola:
     def __init__(self, numero):
         self.numero = numero
+
 
 class Urna:
     def __init__(self):
@@ -10,6 +12,7 @@ class Urna:
 
     def sortear_bola(self):
         return random.choice(self.bolas)
+
 
 class Computador:
     def __init__(self):
@@ -25,7 +28,13 @@ class Computador:
             return False
 
     def definir_proximo_alvo(self, bola_sorteada):
-        self.alvo += bola_sorteada.numero
+        if self.alvo + bola_sorteada.numero > 100:
+            print("Infelizmente você ultrapassou o valor limite de 100.")
+            return False
+        else:
+            self.alvo += bola_sorteada.numero
+            return True
+
 
 class Jogo:
     def __init__(self):
@@ -38,17 +47,10 @@ class Jogo:
     def jogar(self):
         print("Welcome criançada!")
 
-        tentativas = 0
-
         while True:
-            tentativas += 1
-            if tentativas > 100:
-                print("Infelizmente você só tinha 100 chances...")
-                break
-
             bola_sorteada = self.urna.sortear_bola()
             self.computador.definir_alvo(bola_sorteada)
-            
+
             while True:
                 palpite = input("Qual seu palpite? (um número de 1 a 20): ")
                 if palpite.isdigit():
@@ -63,14 +65,18 @@ class Jogo:
             acertou = self.computador.verificar_alvo(palpite)
 
             if acertou:
-                print(f"Parabéns, agora foi! Alvo {self.computador.alvo} em {tentativas} tentativas.")
+                print(
+                    f"Parabéns, agora foi! Alvo {self.computador.alvo}."
+                )
                 break
             else:
                 print("Você errou. Tente novamente!")
-                self.computador.definir_proximo_alvo(bola_sorteada)
+                if not self.computador.definir_proximo_alvo(bola_sorteada):
+                    break
 
         print("Fim do jogo.")
 
-# fazendo o jogo funcionar
+
+# Fazendo o jogo funcionar
 jogo = Jogo()
 jogo.jogar()
