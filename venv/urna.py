@@ -1,4 +1,4 @@
-import random
+import random #usada para escolher aleatoriamente um elemento de uma sequência
 
 class Bola:
     def __init__(self, numero):
@@ -23,6 +23,9 @@ class Computador:
             return True
         else:
             return False
+
+    def definir_proximo_alvo(self, bola_sorteada):
+        self.alvo += bola_sorteada.numero
 
 class Jogo:
     def __init__(self):
@@ -64,6 +67,7 @@ class Jogo:
                 break
             else:
                 print("Você errou. Tente novamente!")
+                self.computador.definir_proximo_alvo(bola_sorteada)
 
         print("Fim do jogo.")
 
