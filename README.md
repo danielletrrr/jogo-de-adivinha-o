@@ -7,8 +7,7 @@
 3. após o palpite, o jogo irá exibir o valor do alvo
 4. se o palpite estiver incorreto, o jogo mostra o alvo sorteado e o usuário tem uma nova chance
 5. o jogo define o próximo alvo como a soma do alvo anterior com o valor da nova bola sorteada
-6. o usuário terá 100 tentativas para tentar adivinhar o alvo
-7. se as tentativas ultrapassarem 100, vitória do computador 
+7. se o valor do alvo ultrapassar 100, vitória do computador 
 8. se o palpite estiver correto, vitória do usuário e o jogo reinicia
 >
 >HISTÓRIA DO USUÁRIO :space_invader:
